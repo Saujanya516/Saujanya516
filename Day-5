@@ -1,0 +1,93 @@
+Question 17
+Write a program to Check perfect number.
+
+# Program to check whether a number is a perfect number
+
+num = int(input("Enter a number: "))
+
+if num <= 0:
+    print(f"{num} is NOT a Perfect number")
+else:
+    total = 0
+    for i in range(1, num):
+        if num % i == 0:
+            total += i
+
+    if total == num:
+        print(f"{num} is a Perfect number")
+    else:
+        print(f"{num} is NOT a Perfect number")
+
+Question 18
+Write a program to Check strong number.
+
+# Program to check whether a number is a strong number
+
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+num = int(input("Enter a number: "))
+temp = abs(num)
+
+total = 0
+while temp > 0:
+    digit = temp % 10
+    total += factorial(digit)
+    temp = temp // 10
+
+if total == abs(num):
+    print(f"{num} is a Strong number")
+else:
+    print(f"{num} is NOT a Strong number")
+
+Question 19
+Write a program to Print factors of a number.
+
+# Program to print factors of a number
+
+num = int(input("Enter a number: "))
+
+print(f"\nFactors of {num}:")
+for i in range(1, num + 1):
+    if num % i == 0:
+        print(i, end=" ")
+
+Question 20
+Write a program to Find largest prime factor
+
+# Program to find the largest prime factor of a number
+
+num = int(input("Enter a number: "))
+n = num
+
+largest_factor = -1
+
+# Divide out all factors of 2 first
+while n % 2 == 0:
+    largest_factor = 2
+    n = n // 2
+
+# n must be odd now, so check odd factors from 3 onwards
+i = 3
+while i * i <= n:
+    while n % i == 0:
+        largest_factor = i
+        n = n // i
+    i += 2
+
+# If n is still greater than 2, it's a prime factor itself
+if n > 2:
+    largest_factor = n
+
+print(f"Largest prime factor of {num} = {largest_factor}")
+
+
+
+
+
+
+
+
