@@ -1,0 +1,78 @@
+Question 49
+Write a program to Input and display array.
+
+# Program to input and display array
+
+n = int(input("Enter number of elements: "))
+
+arr = []
+for i in range(n):
+    element = int(input(f"Enter element {i + 1}: "))
+    arr.append(element)
+
+print("\nArray elements:")
+for element in arr:
+    print(element, end=" ")
+
+Question 50
+Write a program to Find sum and average of array.
+
+# Program to find sum and average of array
+
+n = int(input("Enter number of elements: "))
+
+arr = []
+for i in range(n):
+    element = float(input(f"Enter element {i + 1}: "))
+    arr.append(element)
+
+total = sum(arr)
+average = total / n
+
+print(f"\nArray elements: {arr}")
+print(f"Sum = {total}")
+print(f"Average = {average}")
+
+Question 51
+Write a program to Find largest and smallest element.
+
+# Program to find largest and smallest element in array
+
+n = int(input("Enter number of elements: "))
+arr = list(map(float, input("Enter elements separated by space: ").split()))
+
+largest = arr[0]
+smallest = arr[0]
+
+for element in arr:
+    if element > largest:
+        largest = element
+    if element < smallest:
+        smallest = element
+
+print(f"\nArray elements: {arr}")
+print(f"Largest element = {largest}")
+print(f"Smallest element = {smallest}")
+
+Question 52
+Write a program to Count even and odd elements.
+
+# Program to count even and odd elements in array
+
+n = int(input("Enter number of elements: "))
+arr = list(map(int, input("Enter elements separated by space: ").split()))
+
+even_count = 0
+odd_count = 0
+
+for element in arr:
+    if element % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+
+print(f"\nArray elements: {arr}")
+print(f"Even elements = {even_count}")
+print(f"Odd elements = {odd_count}")
+
+
