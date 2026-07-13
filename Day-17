@@ -1,0 +1,194 @@
+Question 65
+Write a program to merge arrays
+  
+#include <stdio.h>
+
+int main() {
+    int arr1[100], arr2[100], arr3[200];
+    int n1, n2, i, j;
+
+    printf("Enter the size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter the elements of first array:\n");
+    for(i = 0; i < n1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter the size of second array: ");
+    scanf("%d", &n2);
+
+    printf("Enter the elements of second array:\n");
+    for(i = 0; i < n2; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    // Copy first array into third array
+    for(i = 0; i < n1; i++) {
+        arr3[i] = arr1[i];
+    }
+
+    // Copy second array into third array
+    for(j = 0; j < n2; j++) {
+        arr3[i] = arr2[j];
+        i++;
+    }
+
+    printf("Merged array:\n");
+    for(i = 0; i < n1 + n2; i++) {
+        printf("%d ", arr3[i]);
+    }
+
+    return 0;
+}
+
+Question 66
+Write a program to Union of arrays.
+
+#include <stdio.h>
+
+int main() {
+    int arr1[100], arr2[100], unionArr[200];
+    int n1, n2, i, j, k = 0, found;
+
+    printf("Enter the size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter the elements of first array:\n");
+    for(i = 0; i < n1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter the size of second array: ");
+    scanf("%d", &n2);
+
+    printf("Enter the elements of second array:\n");
+    for(i = 0; i < n2; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    // Copy unique elements of first array
+    for(i = 0; i < n1; i++) {
+        found = 0;
+        for(j = 0; j < k; j++) {
+            if(arr1[i] == unionArr[j]) {
+                found = 1;
+                break;
+            }
+        }
+        if(!found) {
+            unionArr[k++] = arr1[i];
+        }
+    }
+
+    // Copy unique elements of second array
+    for(i = 0; i < n2; i++) {
+        found = 0;
+        for(j = 0; j < k; j++) {
+            if(arr2[i] == unionArr[j]) {
+                found = 1;
+                break;
+            }
+        }
+        if(!found) {
+            unionArr[k++] = arr2[i];
+        }
+    }
+
+    printf("Union of arrays:\n");
+    for(i = 0; i < k; i++) {
+        printf("%d ", unionArr[i]);
+    }
+
+    return 0;
+}
+
+Question 67
+Write a program to Intersection of arrays.
+
+#include <stdio.h>
+
+int main() {
+    int arr1[100], arr2[100];
+    int n1, n2, i, j, k, found;
+
+    printf("Enter the size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter the elements of first array:\n");
+    for(i = 0; i < n1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter the size of second array: ");
+    scanf("%d", &n2);
+
+    printf("Enter the elements of second array:\n");
+    for(i = 0; i < n2; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    printf("Intersection of arrays:\n");
+
+    for(i = 0; i < n1; i++) {
+        for(j = 0; j < n2; j++) {
+            if(arr1[i] == arr2[j]) {
+                found = 0;
+
+                // Check if already printed
+                for(k = 0; k < i; k++) {
+                    if(arr1[k] == arr1[i]) {
+                        found = 1;
+                        break;
+                    }
+                }
+
+                if(!found) {
+                    printf("%d ", arr1[i]);
+                }
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
+
+Question 68
+Write a program to Find common elements.
+
+#include <stdio.h>
+
+int main() {
+    int arr1[100], arr2[100];
+    int n1, n2, i, j;
+
+    printf("Enter the size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter the elements of first array:\n");
+    for(i = 0; i < n1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter the size of second array: ");
+    scanf("%d", &n2);
+
+    printf("Enter the elements of second array:\n");
+    for(i = 0; i < n2; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    printf("Common elements are:\n");
+
+    for(i = 0; i < n1; i++) {
+        for(j = 0; j < n2; j++) {
+            if(arr1[i] == arr2[j]) {
+                printf("%d ", arr1[i]);
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
