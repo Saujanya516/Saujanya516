@@ -1,0 +1,83 @@
+Question 9
+Write a program to Check whether a number is prime.
+
+# Program to check whether a number is prime
+
+num = int(input("Enter a number: "))
+
+if num <= 1:
+    print(f"{num} is NOT a Prime number")
+else:
+    is_prime = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print(f"{num} is a Prime number")
+    else:
+        print(f"{num} is NOT a Prime number")
+
+Question 10
+Write a program to print prime numbers in a range.
+
+# Program to print prime numbers in a range
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Main program
+start = int(input("Enter the start of range: "))
+end = int(input("Enter the end of range: "))
+
+print(f"\nPrime numbers between {start} and {end}:")
+for num in range(start, end + 1):
+    if is_prime(num):
+        print(num, end=" ")
+
+Question 11
+Write a program to Find GCD of two numbers
+
+# Program to find GCD of two numbers
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+# Main program
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+result = gcd(num1, num2)
+print(f"GCD of {num1} and {num2} = {result}")
+
+Question 12
+Write a program to Find LCM of two numbers.
+
+# Program to find LCM of two numbers
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    return (a * b) // gcd(a, b)
+
+# Main program
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+result = lcm(num1, num2)
+print(f"LCM of {num1} and {num2} = {result}")
+
+
+
+
