@@ -1,0 +1,114 @@
+Question 85
+Write a program to Check palindrome string.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i, length = 0, flag = 1;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // Find the length of the string
+    while(str[length] != '\0') {
+        length++;
+    }
+
+    // Check palindrome
+    for(i = 0; i < length / 2; i++) {
+        if(str[i] != str[length - i - 1]) {
+            flag = 0;
+            break;
+        }
+    }
+
+    if(flag)
+        printf("The string is a Palindrome.");
+    else
+        printf("The string is Not a Palindrome.");
+
+    return 0;
+}
+
+Question 86
+Write a program to Count words in a sentence.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i, words = 1;
+
+    printf("Enter a sentence: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++) {
+        if(str[i] == ' ') {
+            words++;
+        }
+    }
+
+    printf("Number of words = %d\n", words);
+
+    return 0;
+}
+
+Question 87
+Write a program to Character frequency.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i, j, count;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Character Frequencies:\n");
+
+    for(i = 0; str[i] != '\0'; i++) {
+        count = 1;
+
+        if(str[i] == '*')
+            continue;
+
+        for(j = i + 1; str[j] != '\0'; j++) {
+            if(str[i] == str[j]) {
+                count++;
+                str[j] = '*';   // Mark counted character
+            }
+        }
+
+        printf("%c = %d\n", str[i], count);
+    }
+
+    return 0;
+}
+
+Question 88
+Write a program to Remove spaces from string.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i, j = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++) {
+        if(str[i] != ' ' && str[i] != '\n') {
+            str[j] = str[i];
+            j++;
+        }
+    }
+
+    str[j] = '\0';
+
+    printf("String after removing spaces: %s\n", str);
+
+    return 0;
+}
