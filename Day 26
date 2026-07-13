@@ -1,0 +1,148 @@
+Question 101
+Write a program to Create number guessing game.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int number, guess;
+
+    srand(time(0));
+    number = rand() % 100 + 1;   // Random number between 1 and 100
+
+    printf("Guess a number between 1 and 100:\n");
+
+    do {
+        printf("Enter your guess: ");
+        scanf("%d", &guess);
+
+        if(guess > number)
+            printf("Too High!\n");
+        else if(guess < number)
+            printf("Too Low!\n");
+        else
+            printf("Congratulations! You guessed the correct number.\n");
+
+    } while(guess != number);
+
+    return 0;
+}
+
+Question 102
+Write a program to Create voting eligibility system.
+
+#include <stdio.h>
+
+int main() {
+    int age;
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    if(age >= 18) {
+        printf("You are eligible to vote.\n");
+    } else {
+        printf("You are not eligible to vote.\n");
+    }
+
+    return 0;
+}
+
+Question 103
+Write a program to Create ATM simulation.
+
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float balance = 1000.0, amount;
+
+    do {
+        printf("\n===== ATM MENU =====\n");
+        printf("1. Check Balance\n");
+        printf("2. Deposit\n");
+        printf("3. Withdraw\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+            case 1:
+                printf("Current Balance = %.2f\n", balance);
+                break;
+
+            case 2:
+                printf("Enter amount to deposit: ");
+                scanf("%f", &amount);
+                balance += amount;
+                printf("Deposit Successful!\n");
+                break;
+
+            case 3:
+                printf("Enter amount to withdraw: ");
+                scanf("%f", &amount);
+
+                if(amount <= balance) {
+                    balance -= amount;
+                    printf("Withdrawal Successful!\n");
+                } else {
+                    printf("Insufficient Balance!\n");
+                }
+                break;
+
+            case 4:
+                printf("Thank you for using the ATM.\n");
+                break;
+
+            default:
+                printf("Invalid Choice!\n");
+        }
+
+    } while(choice != 4);
+
+    return 0;
+}
+
+Question 104
+Write a program to Create quiz application.
+
+#include <stdio.h>
+
+int main() {
+    int answer, score = 0;
+
+    printf("===== QUIZ APPLICATION =====\n\n");
+
+    printf("Q1. What is the capital of India?\n");
+    printf("1. Mumbai\n2. New Delhi\n3. Kolkata\n4. Chennai\n");
+    printf("Enter your answer: ");
+    scanf("%d", &answer);
+    if(answer == 2)
+        score++;
+
+    printf("\nQ2. Which language is used for system programming?\n");
+    printf("1. Python\n2. Java\n3. C\n4. HTML\n");
+    printf("Enter your answer: ");
+    scanf("%d", &answer);
+    if(answer == 3)
+        score++;
+
+    printf("\nQ3. How many days are there in a week?\n");
+    printf("1. 5\n2. 6\n3. 7\n4. 8\n");
+    printf("Enter your answer: ");
+    scanf("%d", &answer);
+    if(answer == 3)
+        score++;
+
+    printf("\nYour Score = %d/3\n", score);
+
+    if(score == 3)
+        printf("Excellent!\n");
+    else if(score == 2)
+        printf("Good Job!\n");
+    else
+        printf("Better Luck Next Time!\n");
+
+    return 0;
+}
