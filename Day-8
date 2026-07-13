@@ -1,0 +1,59 @@
+Question 29
+Write a program to Print half pyramid pattern.
+
+# Program to print half pyramid pattern
+
+n = int(input("Enter number of rows: "))
+
+for i in range(1, n + 1):
+    print("*" * i)
+
+Question 30
+Write a program to Print number triangle.
+1
+12
+123
+1234
+12345
+
+# Program to print number triangle
+
+n = int(input("Enter number of rows: "))
+
+for i in range(1, n + 1):
+    for j in range(1, i + 1):
+        print(j, end="")
+    print()
+
+Question 31
+Write a program to Print character triangle.
+A
+AB
+ABC
+ABCD
+ABCDE
+
+# Program to print character triangle
+
+n = int(input("Enter number of rows: "))
+
+for i in range(1, n + 1):
+    for j in range(i):
+        print(chr(65 + j), end="")
+    print()
+
+Question 32
+Write a program to Print repeated-number pattern.
+1
+22
+333
+4444
+55555
+
+# Program to print repeated-number pattern
+
+n = int(input("Enter number of rows: "))
+
+for i in range(1, n + 1):
+    print(str(i) * i)
+
