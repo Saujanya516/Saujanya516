@@ -1,0 +1,94 @@
+Question 5
+Write a program to Find sum of digits of a number
+
+# Program to find sum of digits of a number
+
+num = int(input("Enter a number: "))
+
+# Handle negative numbers
+num = abs(num)
+
+total = 0
+while num > 0:
+    digit = num % 10
+    total += digit
+    num = num // 10
+
+print(f"Sum of digits = {total}")
+
+Question 6
+Write a program to Reverse a number
+
+# Program to reverse a number
+
+num = int(input("Enter a number: "))
+
+# Handle negative numbers
+negative = num < 0
+num = abs(num)
+
+reversed_num = 0
+while num > 0:
+    digit = num % 10
+    reversed_num = reversed_num * 10 + digit
+    num = num // 10
+
+if negative:
+    reversed_num = -reversed_num
+
+print(f"Reversed number = {reversed_num}")
+
+Question 7
+Write a program to Find product of digits.
+
+# Program to find product of digits of a number
+
+num = int(input("Enter a number: "))
+
+# Handle negative numbers
+num = abs(num)
+
+product = 1
+if num == 0:
+    product = 0
+else:
+    while num > 0:
+        digit = num % 10
+        product *= digit
+        num = num // 10
+
+print(f"Product of digits = {product}")
+
+Question 8
+Write a program to Check whether a number is palindrome.
+
+# Program to check whether a number is a palindrome
+
+num = int(input("Enter a number: "))
+
+# Handle negative numbers (negative numbers are not palindromes)
+original = num
+num = abs(num)
+
+reversed_num = 0
+while num > 0:
+    digit = num % 10
+    reversed_num = reversed_num * 10 + digit
+    num = num // 10
+
+if original >= 0 and original == reversed_num:
+    print(f"{original} is a Palindrome number")
+else:
+    print(f"{original} is NOT a Palindrome number")
+
+
+
+
+
+
+
+
+
+
+
+
