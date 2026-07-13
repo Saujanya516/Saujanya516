@@ -1,0 +1,87 @@
+Question 45
+Write a program to Write function for palindrome.
+
+# Function to check whether a number is a palindrome
+
+def is_palindrome(n):
+    original = n
+    n = abs(n)
+    reversed_num = 0
+    while n > 0:
+        digit = n % 10
+        reversed_num = reversed_num * 10 + digit
+        n = n // 10
+    return original >= 0 and original == reversed_num
+
+# Main program
+num = int(input("Enter a number: "))
+
+if is_palindrome(num):
+    print(f"{num} is a Palindrome number")
+else:
+    print(f"{num} is NOT a Palindrome number")
+
+Question 46
+Write a program to Write function for Armstrong.
+
+# Function to check whether a number is an Armstrong number
+
+def is_armstrong(n):
+    num_digits = len(str(n))
+    temp = n
+    total = 0
+    while temp > 0:
+        digit = temp % 10
+        total += digit ** num_digits
+        temp = temp // 10
+    return total == n
+
+# Main program
+num = int(input("Enter a number: "))
+
+if is_armstrong(num):
+    print(f"{num} is an Armstrong number")
+else:
+    print(f"{num} is NOT an Armstrong number")
+
+Question 47
+Write a program to Write function for Fibonacci.
+
+# Function to generate Fibonacci series
+
+def fibonacci(n):
+    series = []
+    a, b = 0, 1
+    for i in range(n):
+        series.append(a)
+        a, b = b, a + b
+    return series
+
+# Main program
+n = int(input("Enter number of terms: "))
+result = fibonacci(n)
+
+print(f"Fibonacci series up to {n} terms:")
+print(*result)
+
+Question 48
+Write a program to Write function for perfect number.
+
+# Function to check whether a number is a perfect number
+
+def is_perfect(n):
+    if n <= 0:
+        return False
+    total = 0
+    for i in range(1, n):
+        if n % i == 0:
+            total += i
+    return total == n
+
+# Main program
+num = int(input("Enter a number: "))
+
+if is_perfect(num):
+    print(f"{num} is a Perfect number")
+else:
+    print(f"{num} is NOT a Perfect number")
