@@ -1,0 +1,83 @@
+Question 21
+Write a program to Convert decimal to binary
+
+# Program to convert decimal to binary
+
+num = int(input("Enter a decimal number: "))
+
+if num == 0:
+    binary = "0"
+else:
+    negative = num < 0
+    num = abs(num)
+    binary = ""
+    
+    while num > 0:
+        binary = str(num % 2) + binary
+        num = num // 2
+    
+    if negative:
+        binary = "-" + binary
+
+print(f"Binary equivalent = {binary}")
+
+Question 22
+Write a program to Convert binary to decimal.
+
+# Program to convert binary to decimal
+
+binary = input("Enter a binary number: ")
+
+decimal = 0
+power = 0
+
+# Handle negative binary (optional sign)
+negative = binary.startswith("-")
+if negative:
+    binary = binary[1:]
+
+for digit in reversed(binary):
+    decimal += int(digit) * (2 ** power)
+    power += 1
+
+if negative:
+    decimal = -decimal
+
+print(f"Decimal equivalent = {decimal}")
+
+Question 23
+Write a program to Count set bits in a number.
+
+# Program to count set bits (1s) in the binary representation of a number
+
+num = int(input("Enter a number: "))
+
+n = abs(num)
+count = 0
+
+while n > 0:
+    count += n & 1
+    n = n >> 1
+
+print(f"Number of set bits in {num} = {count}")
+
+Question 24
+Write a program to Find x^n without pow().
+
+# Program to find x^n without using pow()
+
+x = float(input("Enter base (x): "))
+n = int(input("Enter exponent (n): "))
+
+result = 1
+negative_exp = n < 0
+n = abs(n)
+
+for i in range(n):
+    result *= x
+
+if negative_exp:
+    result = 1 / result
+
+print(f"{x}^{n if not negative_exp else -n} = {result}")
+
