@@ -1,0 +1,106 @@
+Question 57
+Write a program to Reverse array
+
+# Program to reverse an array
+
+n = int(input("Enter number of elements: "))
+arr = list(map(int, input("Enter elements separated by space: ").split()))
+
+reversed_arr = []
+for i in range(len(arr) - 1, -1, -1):
+    reversed_arr.append(arr[i])
+
+print(f"\nOriginal array: {arr}")
+print(f"Reversed array: {reversed_arr}")
+
+Question 58
+Write a program to Rotate array left
+
+# Program to rotate array left by d positions
+
+n = int(input("Enter number of elements: "))
+arr = list(map(int, input("Enter elements separated by space: ").split()))
+d = int(input("Enter number of positions to rotate: "))
+
+d = d % n  # handle d greater than n
+
+rotated = arr[d:] + arr[:d]
+
+print(f"\nOriginal array: {arr}")
+print(f"Rotated array (left by {d}): {rotated}")
+
+Question 59
+Write a program to Rotate array right
+
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, temp;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    printf("Enter the array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Store the last element
+    temp = arr[n - 1];
+
+    // Shift elements one position to the right
+    for(i = n - 1; i > 0; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    // Place the last element at the first position
+    arr[0] = temp;
+
+    printf("Array after right rotation:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+Question 60
+Write a program to Move zeroes to end
+
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, j = 0, temp;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    printf("Enter the array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Move non-zero elements to the front
+    for(i = 0; i < n; i++) {
+        if(arr[i] != 0) {
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            j++;
+        }
+    }
+
+    printf("Array after moving zeroes to the end:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
