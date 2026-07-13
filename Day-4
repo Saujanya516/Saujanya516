@@ -1,0 +1,85 @@
+Question 13
+Write a program to Generate Fibonacci series.
+
+# Program to generate Fibonacci series
+
+n = int(input("Enter number of terms: "))
+
+a, b = 0, 1
+print(f"Fibonacci series up to {n} terms:")
+
+for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+
+Question 14
+Write a program to Find nth Fibonacci term
+
+# Program to find nth Fibonacci term
+
+def fibonacci(n):
+    if n <= 0:
+        return "Invalid input"
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    
+    a, b = 0, 1
+    for i in range(3, n + 1):
+        a, b = b, a + b
+    return b
+
+# Main program
+n = int(input("Enter the term (n): "))
+print(f"{n}th Fibonacci term = {fibonacci(n)}")
+
+Question 15
+Write a program to Check Armstrong number.
+
+# Program to check whether a number is an Armstrong number
+
+num = int(input("Enter a number: "))
+
+# Count number of digits
+temp = num
+num_digits = len(str(abs(temp)))
+
+# Calculate sum of digits raised to the power of num_digits
+temp = abs(num)
+total = 0
+while temp > 0:
+    digit = temp % 10
+    total += digit ** num_digits
+    temp = temp // 10
+
+if total == abs(num):
+    print(f"{num} is an Armstrong number")
+else:
+    print(f"{num} is NOT an Armstrong number")
+
+Question 16
+Write a program to Print Armstrong 
+
+# Program to print Armstrong numbers in a range
+
+def is_armstrong(num):
+    temp = num
+    num_digits = len(str(num))
+    total = 0
+    while temp > 0:
+        digit = temp % 10
+        total += digit ** num_digits
+        temp = temp // 10
+    return total == num
+
+# Main program
+start = int(input("Enter the start of range: "))
+end = int(input("Enter the end of range: "))
+
+print(f"\nArmstrong numbers between {start} and {end}:")
+for num in range(start, end + 1):
+    if is_armstrong(num):
+        print(num, end=" ")
+
+
