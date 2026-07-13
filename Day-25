@@ -1,0 +1,169 @@
+Question 97
+Write a program to Merge two sorted arrays.
+
+#include <stdio.h>
+
+int main() {
+    int arr1[100], arr2[100], arr3[200];
+    int n1, n2, i = 0, j = 0, k = 0;
+
+    printf("Enter the size of first sorted array: ");
+    scanf("%d", &n1);
+
+    printf("Enter the elements of first sorted array:\n");
+    for(i = 0; i < n1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter the size of second sorted array: ");
+    scanf("%d", &n2);
+
+    printf("Enter the elements of second sorted array:\n");
+    for(i = 0; i < n2; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    i = 0;
+    j = 0;
+    k = 0;
+
+    // Merge the arrays
+    while(i < n1 && j < n2) {
+        if(arr1[i] <= arr2[j]) {
+            arr3[k++] = arr1[i++];
+        } else {
+            arr3[k++] = arr2[j++];
+        }
+    }
+
+    while(i < n1) {
+        arr3[k++] = arr1[i++];
+    }
+
+    while(j < n2) {
+        arr3[k++] = arr2[j++];
+    }
+
+    printf("Merged sorted array:\n");
+    for(i = 0; i < k; i++) {
+        printf("%d ", arr3[i]);
+    }
+
+    return 0;
+}
+
+Question 98
+Write a program to Find common characters in strings.
+
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[100];
+    int i, j, found;
+
+    printf("Enter first string: ");
+    scanf("%s", str1);
+
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+    printf("Common characters: ");
+
+    for(i = 0; str1[i] != '\0'; i++) {
+        found = 0;
+
+        // Avoid printing duplicate characters
+        for(j = 0; j < i; j++) {
+            if(str1[i] == str1[j]) {
+                found = 1;
+                break;
+            }
+        }
+
+        if(found)
+            continue;
+
+        for(j = 0; str2[j] != '\0'; j++) {
+            if(str1[i] == str2[j]) {
+                printf("%c ", str1[i]);
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
+
+Question 99
+Write a program to Sort names alphabetically.
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[100][50], temp[50];
+    int n, i, j;
+
+    printf("Enter the number of names: ");
+    scanf("%d", &n);
+
+    printf("Enter the names:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%s", name[i]);
+    }
+
+    // Sort names alphabetically
+    for(i = 0; i < n - 1; i++) {
+        for(j = i + 1; j < n; j++) {
+            if(strcmp(name[i], name[j]) > 0) {
+                strcpy(temp, name[i]);
+                strcpy(name[i], name[j]);
+                strcpy(name[j], temp);
+            }
+        }
+    }
+
+    printf("Names in alphabetical order:\n");
+    for(i = 0; i < n; i++) {
+        printf("%s\n", name[i]);
+    }
+
+    return 0;
+}
+
+Question 100
+Write a program to Sort words by length.
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char words[100][50], temp[50];
+    int n, i, j;
+
+    printf("Enter the number of words: ");
+    scanf("%d", &n);
+
+    printf("Enter the words:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%s", words[i]);
+    }
+
+    // Sort words by length
+    for(i = 0; i < n - 1; i++) {
+        for(j = i + 1; j < n; j++) {
+            if(strlen(words[i]) > strlen(words[j])) {
+                strcpy(temp, words[i]);
+                strcpy(words[i], words[j]);
+                strcpy(words[j], temp);
+            }
+        }
+    }
+
+    printf("Words sorted by length:\n");
+    for(i = 0; i < n; i++) {
+        printf("%s\n", words[i]);
+    }
+
+    return 0;
+}
