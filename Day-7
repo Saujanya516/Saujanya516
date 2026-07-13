@@ -1,0 +1,74 @@
+Question 25
+Write a program to Recursive factorial.
+
+# Program to find factorial using recursion
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+# Main program
+num = int(input("Enter a number: "))
+
+if num < 0:
+    print("Factorial does not exist for negative numbers.")
+else:
+    print(f"Factorial of {num} = {factorial(num)}")
+
+Question 26
+Write a program to Recursive Fibonacci.
+
+# Program to find nth Fibonacci term using recursion
+
+def fibonacci(n):
+    if n <= 0:
+        return "Invalid input"
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+# Main program
+n = int(input("Enter the term (n): "))
+print(f"{n}th Fibonacci term = {fibonacci(n)}")
+
+Question 27
+Write a program to Recursive sum of digits
+
+# Program to find sum of digits using recursion
+
+def sum_of_digits(n):
+    n = abs(n)
+    if n == 0:
+        return 0
+    return n % 10 + sum_of_digits(n // 10)
+
+# Main program
+num = int(input("Enter a number: "))
+print(f"Sum of digits of {num} = {sum_of_digits(num)}")
+
+Question 28
+Write a program to Recursive reverse number
+
+# Program to reverse a number using recursion
+
+def reverse_number(n, reversed_num=0):
+    if n == 0:
+        return reversed_num
+    reversed_num = reversed_num * 10 + n % 10
+    return reverse_number(n // 10, reversed_num)
+
+# Main program
+num = int(input("Enter a number: "))
+negative = num < 0
+num = abs(num)
+
+result = reverse_number(num)
+if negative:
+    result = -result
+
+print(f"Reversed number = {result}")
+
+
